@@ -3,7 +3,6 @@
 
 
 
-
 import cv2
 import mediapipe as mp
 import pandas as pd
@@ -59,7 +58,7 @@ if __name__ == "__main__":
         keypoints = extract_keypoints(video_path)
         print(f"Extracted {len(keypoints)} keypoints from {video_path}")  # Debugging output
         all_keypoints.append(keypoints)
-        save_keypoints_to_csv(keypoints, f"{video_path}_keypoints.csv")
+        save_keypoints_to_csv(keypoints, f"{video_path}_keypoints np.csv")
     
     # Compare keypoints of the two videos
     if all_keypoints[0] and all_keypoints[1]:  # Check if both sequences are non-empty
