@@ -1,4 +1,5 @@
 ### For better visiblity see it in day wise folder with plots and images.
+### In the data you will find 4 csv files 2 is for DTW  and 2 is for Euclidean Distance
 
 
 # **Problem Statement:**
