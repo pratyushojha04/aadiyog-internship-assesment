@@ -1,13 +1,15 @@
-# Documentation for Video Similarity Analysis Using Keypoints and Distance Metrics
+# Documentation for Video Similarity Analysis Using Keypoints and Distance Metrics using MediaPipe Pose 
 
 ### Overview:
-This project involves analyzing the similarity between two videos by extracting keypoints using **MediaPipe Pose**, calculating the **Distance** between keypoint sequences using two different methods: **FastDTW (Dynamic Time Warping)** and **Euclidean Distance**. The goal is to quantify how similar or dissimilar the movements in the two videos are based on keypoint data.
+This project involves analyzing the similarity between two videos by extracting keypoints using **MediaPipe Pose**, calculating the **Distance** between keypoint sequences using two different methods: **FastDTW (Dynamic Time Warping)(FastDTW make fast computation as it skips frames like skip every 5 frames)** and **Euclidean Distance**. The goal is to quantify how similar or dissimilar the movements in the two videos are based on keypoint data.
 
+### NOTE : 
+   Here I use FastDtW to make fast computation it is just like DTW and I have involved one more comparision method which is Euclidean Distance. becouse initially I was using DTW and it was taking too much time so I have used Euclidean Distance then after I came to know about FastDTW . So decided to use both FastDTW and Euclidean Distance.
 ### Steps and Approach:
 
 #### 1. **Video Input and Keypoint Extraction:**
    - The first step is to **extract keypoints** from each video. We use **MediaPipe Pose** for this purpose, which provides a set of predefined landmarks (33 in total) representing the human body.
-   - For each frame in the video, **MediaPipe Pose** processes the image and returns the 3D coordinates (x, y, z) of the landmarks.
+   - For each frame in the video, **MediaPipe Pose** processes the image and returns the 3D coordinates (x, y, z) of the landmarks hence in total we have 33*3 = 99 coordinates.
    - We **skip frames** in order to reduce computation time and focus on representative frames (e.g., every 5th frame).
    - Optionally, we can select only **significant keypoints** (e.g., head, shoulders, and hips) to focus on the most relevant movements and further reduce the data's dimensionality.
 
@@ -18,7 +20,8 @@ This project involves analyzing the similarity between two videos by extracting 
 #### 3. **Similarity Calculation (FastDTW Approach):**
    - To compare the two keypoint sequences, we use **FastDTW (Dynamic Time Warping)**, an approximate method for computing the similarity between time series data. 
    - FastDTW compares the **temporal alignment** of two sequences and computes a distance metric that accounts for possible shifts in time between corresponding frames. 
-   - A **lower distance score** from FastDTW indicates a higher degree of similarity between the keypoint sequences from the two videos. The computed score reflects how closely the motion patterns in the videos match, considering both the movements and temporal alignment.
+   - A **lower distance score** from FastDTW indicates a higher degree of similarity between the keypoint sequences from the two videos. The computed score reflects how closely the motion patterns in the videos match, considering both the movements and temporal alignment **usually less than 50 is considered similar but not identical 0 is identical and above 100 is dissimilar**.
+
 
    - **FastDTW Workflow:**
      1. **Flatten** the keypoints of each frame into a 1D array.
@@ -44,7 +47,7 @@ This project involves analyzing the similarity between two videos by extracting 
      - A **smaller Euclidean distance** indicates that the keypoints between the two videos are **closer together** in space, suggesting greater similarity in their poses.
      - A **larger Euclidean distance** implies that the keypoints are farther apart, suggesting greater dissimilarity in the body poses of the two videos.
      - Example Result: **Similarity Score (Euclidean Distance)** = **21.84**.
-       - This score indicates that the two videos are **moderately similar** based on the Euclidean distance between their keypoint sequences.
+       - This score indicates that the two videos are **moderately similar means not exactly same** based on the Euclidean distance between their keypoint sequences.
 
 #### 5. **Analysis and Interpretation of Scores:**
    - **FastDTW vs. Euclidean Distance:**
@@ -60,10 +63,11 @@ This project involves analyzing the similarity between two videos by extracting 
      - **Similarity Score (Euclidean Distance)**: This measures the **spatial similarity** between keypoints. A score of 21.84 suggests that the poses in both videos are **reasonably similar** in terms of body position, but there may be some differences in the posture or alignment of body parts.
 
 #### 6. **Conclusion and Further Improvements:**
-   - The calculated similarity scores provide a numerical measure of how similar or dissimilar the two videos are based on their extracted keypoints.
+   - The calculated similarity scores provide a numerical measure of how similar or dissimilar the two videos are based on their extracted keypoints.As per my analysis I found both the videos are similar but not identical means the motion in the two videos is somewhat similar but not identical.
    - These scores can be used to:
      - **Classify videos** as similar or dissimilar for tasks like action recognition, gesture classification, or video alignment.
-     - **Quantify the degree of similarity** between different videos for further analysis.
+     - **Quantify the degree of similarity** between different videos for further analysis. 
+     
    - For further improvement:
      - **Normalization** of the similarity scores can be applied to adjust for video length or the number of frames processed.
      - **Benchmarking** with a larger dataset of labeled video pairs will help define a clearer threshold for similarity based on domain-specific applications (e.g., exercise recognition, dance moves, etc.).
