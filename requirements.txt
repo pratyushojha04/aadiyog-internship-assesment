@@ -1,0 +1,8 @@
+fastdtw
+numpy
+matplotlib
+opencv-python
+mediapipe
+pandas
+dtaidistance
+seaborn
