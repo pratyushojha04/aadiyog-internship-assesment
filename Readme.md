@@ -107,7 +107,7 @@ This project involves analyzing the similarity between two videos by extracting 
        - The **Euclidean Distance score (21.84)** also suggests **moderate similarity**, primarily considering the spatial alignment of keypoints.
 
    - **What these scores depict:**
-     - **Similarity Score (FastDTW)**: This indicates the **degree of alignment in movement patterns** between the two videos. A score of 37.81 suggests the videos have a **moderate similarity** in terms of pose transitions, but they are not identical.
+     - **Similarity Score (FastDTW)**: This indicates the **degree of alignment in movement patterns** between the two videos. A score of 40.2 suggests the videos have a **moderate similarity** in terms of pose transitions, but they are not identical.
      - **Similarity Score (Euclidean Distance)**: This measures the **spatial similarity** between keypoints. A score of 21.84 suggests that the poses in both videos are **reasonably similar** in terms of body position, but there may be some differences in the posture or alignment of body parts.
 
 #### 6. **Conclusion and Further Improvements:**

@@ -113,6 +113,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
    - Most stable matching in the later portions of both videos
 
 These visualizations collectively suggest that while the two videos capture similar movements, they differ in their execution speed and spatial positioning, with Video 2 showing generally smoother and more gradual changes compared to Video 1.
+And in the initial phase of the video these are dissimilar after may be 2 seconds to 6 seconds.
 
 ![alt text](image-8.png)
 
