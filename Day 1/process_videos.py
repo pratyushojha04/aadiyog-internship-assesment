@@ -39,8 +39,18 @@ def extract_keypoints(video_path, skip_frames=5, max_keypoints=None):
 
 # Function to save keypoints to a CSV file
 def save_keypoints_to_csv(keypoints, output_path):
+    # Flatten keypoints and print for debugging
     flat_keypoints = [np.array(frame).flatten().tolist() for frame in keypoints]
+    
+    # Debugging: Check the flattened keypoints
+    print(f"Flattened keypoints for first frame: {len(flat_keypoints[0])} values")
+    print(f"Keypoints per frame: {len(keypoints[0])} landmarks")
+    print(f"Coordinates per landmark: {len(keypoints[0][0])} values")
+
+    # Save to DataFrame and check shape
     df = pd.DataFrame(flat_keypoints)
+    print(f"Shape of the DataFrame: {df.shape}")
+    
     df.to_csv(output_path, index=False)
 
 # Function to normalize the keypoints (scale the values between 0 and 1)
