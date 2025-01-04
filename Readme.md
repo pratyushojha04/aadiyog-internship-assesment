@@ -172,11 +172,10 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 1. Shows the Dynamic Time Warping alignment between the two videos
 2. The diagonal dark blue line indicates a good temporal alignment between the sequences
-3. Distance measure of 85.66 suggests moderate similarity
+3. Distance measure of 40.2 suggests moderate similarity
 4. The straight diagonal pattern suggests consistent timing between the two videos without major temporal distortions
 
 
-![alt text](image.png)
 
 
 

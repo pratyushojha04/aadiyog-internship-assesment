@@ -38,13 +38,10 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 1. Shows the Dynamic Time Warping alignment between the two videos
 2. The diagonal dark blue line indicates a good temporal alignment between the sequences
-3. Distance measure of 85.66 suggests moderate similarity
+3. Distance measure of 40.2 suggests moderate similarity
 4. The straight diagonal pattern suggests consistent timing between the two videos without major temporal distortions
 
-
-![alt text](image.png)
-
-
+![alt text](image-7.png)
 
 
 
@@ -106,9 +103,9 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 ## Key Observations
 1. The alignment path shows three distinct phases:
-   - Initial phase (frames 0-15): Rapid diagonal progression
-   - Middle phase (frames 15-35): More varied alignment with some horizontal segments
-   - Final phase (frames 35+): More consistent alignment with longer horizontal segments
+   - Initial phase : Rapid diagonal progression
+   - Middle phase : More varied alignment with some horizontal segments
+   - Final phase : More consistent alignment with longer horizontal segments
 
 2. The heatmap background reveals:
    - Higher dissimilarity (yellower regions) in early frames
@@ -117,11 +114,11 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 These visualizations collectively suggest that while the two videos capture similar movements, they differ in their execution speed and spatial positioning, with Video 2 showing generally smoother and more gradual changes compared to Video 1.
 
-![alt text](image-6.png)
+![alt text](image-8.png)
 
 
 
-## some points where both videos are very similar movements and other aspects as well
+## Some points where both videos are very similar movements and other aspects as well
 
 ![alt text](../debug_frame_0.png) ![alt text](../debug_frame_100.png) ![alt text](../debug_frame_200.png)
 
