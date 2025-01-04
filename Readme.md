@@ -60,7 +60,9 @@ This project involves analyzing the similarity between two videos by extracting 
 #### 1. **Video Input and Keypoint Extraction:**
    - The first step is to **extract keypoints** from each video. We use **MediaPipe Pose** for this purpose, which provides a set of predefined landmarks (33 in total) representing the human body.
    - For each frame in the video, **MediaPipe Pose** processes the image and returns the 3D coordinates (x, y, z) of the landmarks hence in total we have 33*3 = 99 coordinates.
-   
+   - We **skip frames** in order to reduce computation time and focus on representative frames (e.g., every 5th frame).
+   - Optionally, we can select only **significant keypoints** (e.g., head, shoulders, and hips) to focus on the most relevant movements and further reduce the data's dimensionality.
+
 #### 2. **Storing Keypoints:**
    - After extracting the keypoints, we **flatten** the coordinates of each keypoint into a 1D array for each frame.
    - The flattened keypoints for each frame are stored in a **CSV file**, providing a structured format for further analysis.
@@ -107,7 +109,7 @@ This project involves analyzing the similarity between two videos by extracting 
        - The **Euclidean Distance score (21.84)** also suggests **moderate similarity**, primarily considering the spatial alignment of keypoints.
 
    - **What these scores depict:**
-     - **Similarity Score (FastDTW)**: This indicates the **degree of alignment in movement patterns** between the two videos. A score of 40.2 suggests the videos have a **moderate similarity** in terms of pose transitions, but they are not identical.
+     - **Similarity Score (FastDTW)**: This indicates the **degree of alignment in movement patterns** between the two videos. A score of 37.81 suggests the videos have a **moderate similarity** in terms of pose transitions, but they are not identical.
      - **Similarity Score (Euclidean Distance)**: This measures the **spatial similarity** between keypoints. A score of 21.84 suggests that the poses in both videos are **reasonably similar** in terms of body position, but there may be some differences in the posture or alignment of body parts.
 
 #### 6. **Conclusion and Further Improvements:**
@@ -127,7 +129,6 @@ This project involves analyzing the similarity between two videos by extracting 
 ![alt text](image.png)
 
 ---
-
 
 # DAY 2
 
@@ -234,7 +235,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
   - Darker purple regions indicating stronger similarity between corresponding frames
   - Lighter (yellower) regions in the upper portion showing greater differences in early frames
 
-## Key Observations
+
 1. The alignment path shows three distinct phases:
    - Initial phase : Rapid diagonal progression
    - Middle phase : More varied alignment with some horizontal segments
@@ -246,18 +247,19 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
    - Most stable matching in the later portions of both videos
 
 These visualizations collectively suggest that while the two videos capture similar movements, they differ in their execution speed and spatial positioning, with Video 2 showing generally smoother and more gradual changes compared to Video 1.
+And in the initial phase of the video these are dissimilar after may be 2 seconds to 6 seconds.
 
 ![alt text](image-8.png)
 
 
 
-## Some points where both videos are very similar movements and other aspects as well
+## Some points where both videos are very similar  in terms of movements and other aspects as well
 
 ![alt text](../debug_frame_0.png) ![alt text](../debug_frame_100.png) ![alt text](../debug_frame_200.png)
 
 
 
-Also check video(ouput.avi).
+## Also check video(ouput.avi).
 
 
 ## Key Findings:
