@@ -101,7 +101,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
   - Darker purple regions indicating stronger similarity between corresponding frames
   - Lighter (yellower) regions in the upper portion showing greater differences in early frames
 
-## Key Observations
+
 1. The alignment path shows three distinct phases:
    - Initial phase : Rapid diagonal progression
    - Middle phase : More varied alignment with some horizontal segments
