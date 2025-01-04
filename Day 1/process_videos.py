@@ -74,7 +74,7 @@ def compare_keypoints(seq1, seq2):
 
 # Main function
 if __name__ == "__main__":
-    # Update video paths with your file locations
+    
     video_paths = ['data/video 1.mp4', 'data/video 2.mp4']
     all_keypoints = []
     
