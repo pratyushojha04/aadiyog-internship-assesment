@@ -20,7 +20,7 @@ This project involves analyzing the similarity between two videos by extracting 
 #### 3. **Similarity Calculation (FastDTW Approach):**
    - To compare the two keypoint sequences, we use **FastDTW (Dynamic Time Warping)**, an approximate method for computing the similarity between time series data. 
    - FastDTW compares the **temporal alignment** of two sequences and computes a distance metric that accounts for possible shifts in time between corresponding frames. 
-   - A **lower distance score** from FastDTW indicates a higher degree of similarity between the keypoint sequences from the two videos. The computed score reflects how closely the motion patterns in the videos match, considering both the movements and temporal alignment **usually less than 50 is considered similar but not identical 0 is identical and above 100 is dissimilar overall below 100 is considered similar**.
+   - A **lower distance score** from FastDTW indicates a higher degree of similarity between the keypoint sequences from the two videos. The computed score reflects how closely the motion patterns in the videos match, considering both the movements and temporal alignment **usually less than 50 is considered similar but not identical 0 is identical and above 100 is dissimilar overall below 50 is considered similar**.
 
 
    - **FastDTW Workflow:**
@@ -31,7 +31,7 @@ This project involves analyzing the similarity between two videos by extracting 
    - **Interpretation of FastDTW Score:**
      - A **low FastDTW score** indicates that the two videos are **very similar**, as their keypoint sequences align well both spatially and temporally.
      - A **high FastDTW score** suggests significant differences between the keypoint sequences, indicating that the two videos are **dissimilar**.
-     - Example Result: **Similarity Score (FastDTW)** = **85.66**.
+     - Example Result: **Similarity Score (FastDTW)** = **40.2**.
        - This score is considered moderate similarity, implying that the motion in the two videos is somewhat similar but not identical.
 
 #### 4. **Similarity Calculation (Euclidean Distance Approach):**
@@ -72,6 +72,10 @@ This project involves analyzing the similarity between two videos by extracting 
      - **Normalization** of the similarity scores can be applied to adjust for video length or the number of frames processed.
      - **Benchmarking** with a larger dataset of labeled video pairs will help define a clearer threshold for similarity based on domain-specific applications (e.g., exercise recognition, dance moves, etc.).
      - **Optimizing keypoint extraction** by selecting only a few keypoints of interest (e.g., head, shoulders, legs) may speed up the process and further improve the similarity computation's efficiency.
-     ![alt text](image.png)
+
+## Console Image for DTW
+
+
+![alt text](image.png)
 
 ---
