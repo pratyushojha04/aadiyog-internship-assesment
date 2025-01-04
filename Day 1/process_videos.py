@@ -1,3 +1,5 @@
+
+
 import cv2
 import mediapipe as mp
 import pandas as pd
@@ -6,7 +8,7 @@ from fastdtw import fastdtw
 from scipy.spatial.distance import euclidean
 
 # Function to extract keypoints from a video
-def extract_keypoints(video_path, skip_frames=5):
+def extract_keypoints(video_path, skip_frames=5, max_keypoints=None):
     mp_pose = mp.solutions.pose
     pose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.5)
     
@@ -22,7 +24,12 @@ def extract_keypoints(video_path, skip_frames=5):
         if frame_count % skip_frames == 0:  # Process only every 'skip_frames' frame
             results = pose.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             if results.pose_landmarks:
+                # Filter keypoints based on importance (optional, can modify as needed)
                 keypoints = [(landmark.x, landmark.y, landmark.z) for landmark in results.pose_landmarks.landmark]
+                
+                if max_keypoints:
+                    keypoints = keypoints[:max_keypoints]  # Limit to most important keypoints (optional)
+                
                 keypoints_list.append(keypoints)
         
         frame_count += 1
@@ -41,14 +48,10 @@ def normalize_keypoints(keypoints_list):
     """
     Normalize the keypoints to a range [0, 1] based on the max values of the x, y, z coordinates.
     """
-    # Extract all keypoints from the list
     all_keypoints = np.array([kp for frame in keypoints_list for kp in frame])
-    
-    # Get the min and max values for x, y, z
     min_vals = np.min(all_keypoints, axis=0)
     max_vals = np.max(all_keypoints, axis=0)
     
-    # Normalize each keypoint
     normalized_keypoints_list = []
     for frame in keypoints_list:
         normalized_frame = [
@@ -77,7 +80,7 @@ if __name__ == "__main__":
     
     for i, video_path in enumerate(video_paths):
         print(f"Processing video: {video_path}")
-        keypoints = extract_keypoints(video_path, skip_frames=5)
+        keypoints = extract_keypoints(video_path, skip_frames=10, max_keypoints=20)  # Limit keypoints to 20 (optional)
         print(f"Extracted {len(keypoints)} frames of keypoints from {video_path}")
         all_keypoints.append(keypoints)
         save_keypoints_to_csv(keypoints, f"data/video_{i + 1}_keypoints.csv")
@@ -93,3 +96,5 @@ if __name__ == "__main__":
         print(f"Similarity Score (FastDTW): {similarity_score}")
     else:
         print("One or both keypoint sequences are empty.")
+
+

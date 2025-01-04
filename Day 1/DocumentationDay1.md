@@ -55,7 +55,7 @@ This project involves analyzing the similarity between two videos by extracting 
        - **FastDTW** accounts for **temporal alignment** and can detect shifts in the time axis, making it more suitable for analyzing sequences that may have small temporal variations.
        - **Euclidean Distance**, on the other hand, measures the **spatial difference** between corresponding keypoints, which can be useful for comparing the overall position of the body in each frame.
      - In the current case:
-       - The **FastDTW score (85.66)** suggests **moderate similarity** with some temporal shifts, meaning the movements in both videos are similar but not perfectly aligned.
+       - The **FastDTW score (40.2)** suggests **moderate similarity** with some temporal shifts, meaning the movements in both videos are similar but not perfectly aligned.
        - The **Euclidean Distance score (21.84)** also suggests **moderate similarity**, primarily considering the spatial alignment of keypoints.
 
    - **What these scores depict:**
@@ -72,5 +72,6 @@ This project involves analyzing the similarity between two videos by extracting 
      - **Normalization** of the similarity scores can be applied to adjust for video length or the number of frames processed.
      - **Benchmarking** with a larger dataset of labeled video pairs will help define a clearer threshold for similarity based on domain-specific applications (e.g., exercise recognition, dance moves, etc.).
      - **Optimizing keypoint extraction** by selecting only a few keypoints of interest (e.g., head, shoulders, legs) may speed up the process and further improve the similarity computation's efficiency.
+     ![alt text](image.png)
 
 ---
