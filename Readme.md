@@ -2,7 +2,7 @@
 # Index and Note
 ### 1.For better visiblity see it in day wise folder with plots and images.
 ### 2. In the data you will find 4 csv files 2 is for DTW  and 2 is for Euclidean Distance and please check output.avi for parallel analysis of the two videos.
-### 3. In the Day 1 folder you will find the process_videos.py which has code for DTW and second file is for Euclidean Distance Documentation file is also there.And the DTW score we get is 85.66 and Euclidean Distance score is 21.84
+### 3. In the Day 1 folder you will find the process_videos.py which has code for DTW and second file is for Euclidean Distance Documentation file is also there.And the DTW score we get is 40.2 and Euclidean Distance score is 21.84
 ### 4. In the Day 2 folder you will find the one finding file and other for the script for ploting the visualizations plots and heatmap .videoVisualization.py visualise two videos parallelly.
 ### 5. If video does not play please use vlc.
 
