@@ -120,6 +120,16 @@ These visualizations collectively suggest that while the two videos capture simi
 ![alt text](image-6.png)
 
 
+
+## some points where both videos are similar movements and other aspects as well
+
+![alt text](../debug_frame_0.png) ![alt text](../debug_frame_100.png) ![alt text](../debug_frame_200.png)
+
+
+
+
+
+
 ## Key Findings:
 
 

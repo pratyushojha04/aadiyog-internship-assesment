@@ -6,3 +6,4 @@ mediapipe
 pandas
 dtaidistance
 seaborn
+opencv-python-headless
