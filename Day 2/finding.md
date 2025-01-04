@@ -28,7 +28,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 1. Less dramatic variations
 2. More stable after frame 25
-3. Longer duration (80 frames vs 45 frames in Video 1)
+
 
 ![alt text](image-2.png)
 
@@ -38,7 +38,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 1. Shows the Dynamic Time Warping alignment between the two videos
 2. The diagonal dark blue line indicates a good temporal alignment between the sequences
-3. Distance measure of 23.95 suggests moderate similarity
+3. Distance measure of 85.66 suggests moderate similarity
 4. The straight diagonal pattern suggests consistent timing between the two videos without major temporal distortions
 
 
@@ -59,7 +59,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 
 
-I'll provide a comprehensive analysis of these four visualizations that compare two videos through their spatial coordinates and temporal alignment.
+
 
 # Coordinate-wise Analysis
 
