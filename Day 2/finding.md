@@ -119,7 +119,7 @@ And in the initial phase of the video these are dissimilar after may be 2 second
 
 
 
-## Some points where both videos are very similar movements and other aspects as well
+## Some points where both videos are very similar  in terms of movements and other aspects as well
 
 ![alt text](../debug_frame_0.png) ![alt text](../debug_frame_100.png) ![alt text](../debug_frame_200.png)
 
