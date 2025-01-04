@@ -60,9 +60,7 @@ This project involves analyzing the similarity between two videos by extracting 
 #### 1. **Video Input and Keypoint Extraction:**
    - The first step is to **extract keypoints** from each video. We use **MediaPipe Pose** for this purpose, which provides a set of predefined landmarks (33 in total) representing the human body.
    - For each frame in the video, **MediaPipe Pose** processes the image and returns the 3D coordinates (x, y, z) of the landmarks hence in total we have 33*3 = 99 coordinates.
-   - We **skip frames** in order to reduce computation time and focus on representative frames (e.g., every 5th frame).
-   - Optionally, we can select only **significant keypoints** (e.g., head, shoulders, and hips) to focus on the most relevant movements and further reduce the data's dimensionality.
-
+   
 #### 2. **Storing Keypoints:**
    - After extracting the keypoints, we **flatten** the coordinates of each keypoint into a 1D array for each frame.
    - The flattened keypoints for each frame are stored in a **CSV file**, providing a structured format for further analysis.
