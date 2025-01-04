@@ -127,7 +127,7 @@ These visualizations collectively suggest that while the two videos capture simi
 
 
 
-
+Also check video(ouput.avi).
 
 
 ## Key Findings:
