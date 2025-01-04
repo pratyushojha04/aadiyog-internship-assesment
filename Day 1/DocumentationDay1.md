@@ -71,6 +71,6 @@ This project involves analyzing the similarity between two videos by extracting 
    - For further improvement:
      - **Normalization** of the similarity scores can be applied to adjust for video length or the number of frames processed.
      - **Benchmarking** with a larger dataset of labeled video pairs will help define a clearer threshold for similarity based on domain-specific applications (e.g., exercise recognition, dance moves, etc.).
-     - **Optimizing keypoint extraction** by selecting only a few keypoints of interest (e.g., head, shoulders, hips) may speed up the process and further improve the similarity computation's efficiency.
+     - **Optimizing keypoint extraction** by selecting only a few keypoints of interest (e.g., head, shoulders, legs) may speed up the process and further improve the similarity computation's efficiency.
 
 ---

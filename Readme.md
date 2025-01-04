@@ -194,7 +194,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 
 
-I'll provide a comprehensive analysis of these four visualizations that compare two videos through their spatial coordinates and temporal alignment.
+
 
 # Coordinate-wise Analysis
 
