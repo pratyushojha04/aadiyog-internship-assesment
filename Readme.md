@@ -49,7 +49,6 @@ You are tasked with analyzing two videos containing human actions. Your objectiv
 
 # DAY 1
 
-
 # Documentation for Video Similarity Analysis Using Keypoints and Distance Metrics using MediaPipe Pose 
 
 ### Overview:
@@ -123,16 +122,10 @@ This project involves analyzing the similarity between two videos by extracting 
    - For further improvement:
      - **Normalization** of the similarity scores can be applied to adjust for video length or the number of frames processed.
      - **Benchmarking** with a larger dataset of labeled video pairs will help define a clearer threshold for similarity based on domain-specific applications (e.g., exercise recognition, dance moves, etc.).
-     - **Optimizing keypoint extraction** by selecting only a few keypoints of interest (e.g., head, shoulders, hips) may speed up the process and further improve the similarity computation's efficiency.
+     - **Optimizing keypoint extraction** by selecting only a few keypoints of interest (e.g., head, shoulders, legs) may speed up the process and further improve the similarity computation's efficiency.
 
 ---
-
----
-
-
-# Day 2
-
-
+# DAY 2
 # Time-Series Variation Analysis:
 
 ## Video 1 (First Plot):
@@ -163,7 +156,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 1. Less dramatic variations
 2. More stable after frame 25
-3. Longer duration (80 frames vs 45 frames in Video 1)
+
 
 ![alt text](image-2.png)
 
@@ -173,7 +166,7 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 
 1. Shows the Dynamic Time Warping alignment between the two videos
 2. The diagonal dark blue line indicates a good temporal alignment between the sequences
-3. Distance measure of 23.95 suggests moderate similarity
+3. Distance measure of 85.66 suggests moderate similarity
 4. The straight diagonal pattern suggests consistent timing between the two videos without major temporal distortions
 
 
@@ -253,6 +246,16 @@ Z coordinate (green line) shows similar pattern to Video 1 but:
 These visualizations collectively suggest that while the two videos capture similar movements, they differ in their execution speed and spatial positioning, with Video 2 showing generally smoother and more gradual changes compared to Video 1.
 
 ![alt text](image-6.png)
+
+
+
+## some points where both videos are very similar movements and other aspects as well
+
+![alt text](../debug_frame_0.png) ![alt text](../debug_frame_100.png) ![alt text](../debug_frame_200.png)
+
+
+
+Also check video(ouput.avi).
 
 
 ## Key Findings:
