@@ -121,7 +121,7 @@ These visualizations collectively suggest that while the two videos capture simi
 
 
 
-## some points where both videos are similar movements and other aspects as well
+## some points where both videos are very similar movements and other aspects as well
 
 ![alt text](../debug_frame_0.png) ![alt text](../debug_frame_100.png) ![alt text](../debug_frame_200.png)
 
